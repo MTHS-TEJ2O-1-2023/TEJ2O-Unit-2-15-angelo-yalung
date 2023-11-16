@@ -2,41 +2,44 @@
  *
  * Created by: Angelo Yalung
  * Created on: Nov 2023
- * This program ...
+ * This program turns on the pixel from the top left corner of the screen and loops it around the edge.
 */
 
 // variables
-let loopCounter = 0
-let loopCounter2 = 0
-let mySprite: game.LedSprite = null
+let ledCoordinate: number = 0
+let loopCounter: number = 0
+let sprite: game.LedSprite = null
 
 // setup
-basic.pause(500)
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-// on a button pressed, make the pixels light up around the edge
+// when button A is pressed, move sprite around edge
 input.onButtonPressed(Button.A, function () {
-mySprite = game.createSprite(0, 0)
+    
+    // setup
+    basic.clearScreen()
+    sprite = game.createSprite(0, 0)
+    loopCounter = 0
 
-  // x axis for top half
-  while (loopCounter <= 5) {
-    mySprite.set(LedSpriteProperty.X, loopCounter)
-    basic.pause(500)
-    loopCounter++
+    // reset ledCoordinate
+  while (loopCounter <= 3) {
+    ledCoordinate = 0
 
-    // start y axis for the right side
-    if (loopCounter <= 5) {
-      loopCounter2++
+    // move ledCoordinate
+    while (ledCoordinate <= 4) {
+      basic.pause(500)
+      sprite.move(1)
+      ledCoordinate++
     }
-    // y axis for right side
-    while (loopCounter2 <= 5) {
-        mySprite.set(LedSpriteProperty.X, loopCounter)
-        basic.pause(500)
-        loopCounter2++
-    }
-}
 
-mySprite.delete()
-basic.pause(500)
+      // tuning 90 degrees
+      sprite.turn(Direction.Right, 90)
+      loopCounter++
+  }
+
+  // clean up
+  sprite.delete()
+  basic.pause(500)
+  basic.showIcon(IconNames.Happy)
 })
