@@ -26,17 +26,17 @@ input.onButtonPressed(Button.A, function () {
   while (loopCounter <= 3) {
     ledCoordinate = 0
 
-  // move ledCoordinate
-  while (ledCoordinate <= 4) {
-    basic.pause(500)
-    sprite.move(1)
-    ledCoordinate++
-  }
+    // move ledCoordinate
+    while (ledCoordinate <= 4) {
+      basic.pause(500)
+      sprite.move(1)
+      ledCoordinate++
+    }
 
-  // tuning 90 degrees
-  sprite.turn(Direction.Right, 90)
-  loopCounter++
-}
+    // tuning 90 degrees
+    sprite.turn(Direction.Right, 90)
+    loopCounter++
+  }
 
   // clean up
   sprite.delete()
