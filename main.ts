@@ -22,7 +22,7 @@ input.onButtonPressed(Button.A, function () {
     sprite = game.createSprite(0, 0)
     loopCounter = 0
 
-    // reset ledCoordinate
+    // resetting
   while (loopCounter <= 3) {
     ledCoordinate = 0
 
