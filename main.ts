@@ -40,5 +40,5 @@ input.onButtonPressed(Button.A, function () {
   // clean up
   sprite.delete()
   basic.pause(500)
-  basic.showIcon(IconNames.Happy)
+  basic.showIcon(IconNames.Yes)
 })
