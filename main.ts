@@ -16,7 +16,6 @@ basic.showIcon(IconNames.Happy)
 
 // when button A is pressed, move sprite around edge
 input.onButtonPressed(Button.A, function () {
-
   // setup
   basic.clearScreen()
   sprite = game.createSprite(0, 0)
